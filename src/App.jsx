@@ -7,7 +7,9 @@ import { Layout, Space, Typography } from "antd";
 import {
   Cryptocurrencies,
   CryptoDetails,
-  Homepage, Navbar, News
+  Homepage,
+  Navbar,
+  News
 } from "./components";
 
 const App = () => {
@@ -19,20 +21,23 @@ const App = () => {
       <div className="main">
         <Layout>
           <div className="routes">
-            <Outlet/>
+            <Outlet />
           </div>
         </Layout>
-      <div className="footer">
-        <Typography.Title level={5} style={{color:'white',textAlign:"center"}}> 
-          Cryptoverse <br/>
-          All rights reserved
-        </Typography.Title>
-        <Space>
-          <Link to='/homepage'>Home</Link>
-          
-          <Link to='/news'>News</Link>
-        </Space>
-      </div>
+        <div className="footer">
+          <Typography.Title
+            level={5}
+            style={{ color: "white", textAlign: "center" }}
+          >
+            Cryptoverse <br />
+            All rights reserved
+          </Typography.Title>
+          <Space>
+            <Link to="/homepage">Home</Link>
+
+            <Link to="/news">News</Link>
+          </Space>
+        </div>
       </div>
     </div>
   );

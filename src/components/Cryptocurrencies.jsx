@@ -16,7 +16,7 @@ const Cryptocurrencies = ({ simplified }) => {
     setcryptos(filteredData);
   }, [cryptosList, SearchTerm]);
 
-  if (isFitching) return <Loader/>;
+  if (isFitching) return <Loader />;
   return (
     <>
       {!simplified && (
@@ -30,11 +30,23 @@ const Cryptocurrencies = ({ simplified }) => {
 
       <Row gutter={[32, 32]} className="crypto-card-container">
         {cryptos?.map((currency) => (
-          <Col xs={24} sm={12} lg={6} className="crypto-card" key={currency.uuid}>
+          <Col
+            xs={24}
+            sm={12}
+            lg={6}
+            className="crypto-card"
+            key={currency.uuid}
+          >
             <Link to={`/crypto/${currency.uuid}`} key={currency.uuid}>
               <Card
                 title={`${currency.rank}. ${currency.name}`}
-                extra={<img className="crypto-image" src={currency.iconUrl} alt='not-found homepage images' />}
+                extra={
+                  <img
+                    className="crypto-image"
+                    src={currency.iconUrl}
+                    alt="not-found homepage images"
+                  />
+                }
                 hoverable
               >
                 <p>Price:{millify(currency.price)}</p>

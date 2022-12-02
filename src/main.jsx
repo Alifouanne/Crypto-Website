@@ -11,31 +11,24 @@ import {
   Route,
   RouterProvider
 } from "react-router-dom";
-import {
-  Cryptocurrencies,
-  CryptoDetails,
-
-  Homepage,
-  News
-} from "./components";
-import ErrorPage from './error-page/ErrorPage';
+import { Cryptocurrencies, CryptoDetails, Homepage, News } from "./components";
+import ErrorPage from "./error-page/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement:<ErrorPage/>,
+    errorElement: <ErrorPage />,
     children: [
       {
-        index:true,
-        element:<Homepage />
+        index: true,
+        element: <Homepage />,
       },
       {
         path: "/homepage",
         element: <Homepage />,
-        
       },
-     
+
       {
         path: "/cryptocurrencies",
         element: <Cryptocurrencies />,
@@ -54,8 +47,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    
-    <Provider store={store}><RouterProvider router={router} /></Provider>
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
- 
